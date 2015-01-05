@@ -1,0 +1,24 @@
+<script>
+var name = prompt("I suppose I have to be polite - what's your name?");
+var guess = prompt("OK, " + name + ", we are going to try and bring the Sonics back\nCan you name a player from the 1996 Western Conference winning team?\nDon't forget to have the correct spelling!");
+var sonics_roster = ["Vincent Askew", "Frank Brickowski", "Sherell Ford", "Hersey Hawkins", "Ervin Johnson", "Shawn Kemp", "Nate McMillan", "Gary Payton", "Sam Perkins", "Steve Scheffler", "Detlef Schrempf", "Eric Snow", "David Wingate"];
+
+function right_wrong (a,b){
+	var on_off = (b.indexOf(a) >= 0);
+	return on_off;
+};
+
+
+if (right_wrong(guess, sonics_roster)){
+		var play_again = confirm ("Great going! " + guess + " did play on that team! Do you want to play again?");
+		// if (play_again){
+			// guess = prompt("Try and name another player on the team!")
+
+		// }
+	}
+	else{
+		alert ("Sorry he didn't play on that team.");
+		};
+
+
+</script>
