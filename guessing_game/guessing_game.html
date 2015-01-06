@@ -5,20 +5,26 @@ var sonics_roster = ["Vincent Askew", "Frank Brickowski", "Sherell Ford", "Herse
 
 function right_wrong (a,b){
 	var on_off = (b.indexOf(a) >= 0);
-	return on_off;
+	return !on_off;
 };
 
+var play_again = true;
 
-if (right_wrong(guess, sonics_roster)){
-		var play_again = confirm ("Great going! " + guess + " did play on that team! Do you want to play again?");
-		// if (play_again){
-			// guess = prompt("Try and name another player on the team!")
-
-		// }
-	}
-	else{
-		alert ("Sorry he didn't play on that team.");
-		};
-
-
+while (right_wrong(guess, sonics_roster)){
+		guess = prompt("Sorry he didn't play on the team. Is there another name that comes to mind?");
+}
+		while(play_again){
+			play_again = confirm ("Great going! " + guess + " did play on the team! Do you want to play again?");
+				if (play_again){
+				guess = prompt("Try and name another player on the team!");
+				right_wrong(guess, sonics_roster);
+					while (right_wrong (guess, sonics_roster)){
+					guess = prompt("Sorry he didn't play on that team. Is there another name that comes to mind?");
+					}
+				}
+				else {
+					alert("Thanks for playing!")
+					play_again = false
+				}
+		}		
 </script>
