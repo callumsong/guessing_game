@@ -4,6 +4,8 @@
 My first game is a guessing game to guess the players from the famous 1996 team
 that took Jordan and his 72-10 Bulls to 4-2 in the NBA Finals. The Reign Man and The Glove...
 
+![](http://ballislife.com/wp-content/uploads/2013/09/KempPayton96finals.jpg)
+
 ## BRING EM BACK!!
 
 ## Instructions
