@@ -8,20 +8,27 @@ function right_wrong (a,b){
 	return !on_off;
 };
 
-var roster_check = right_wrong(guess, sonics_roster);
 
 var play_again = true;
 
-while (roster_check == true){
-		guess = prompt("Sorry he didn't play on the team. Is there another name that comes to mind?");
+while (right_wrong(guess, sonics_roster)){
+		guess = prompt("Sorry he didn't play on the team. Is there another name that comes to mind?\nType \"STOP\" to stop playing");
+		if (guess == "STOP"){
+			alert("OK, thanks for playing.\nRefresh the page if you want to play again")
+			right_wrong(guess,sonics_roster) = false;
+		}
 }
 		while(play_again){
 			play_again = confirm ("Great going! " + guess + " did play on the team! Do you want to play again?");
 				if (play_again){
 				guess = prompt("Try and name another player on the team!");
 				right_wrong(guess, sonics_roster);
-					while (roster_check == true)){
-					guess = prompt("Sorry he didn't play on that team. Is there another name that comes to mind?");
+					while (right_wrong(guess, sonics_roster)){
+					guess = prompt("Sorry he didn't play on that team. Is there another name that comes to mind?\nType \"STOP\" to stop playing");
+					if (guess == "STOP"){
+						alert("OK, thanks for playing.\nRefresh the page if you want to play again");
+						right_wrong(guess,sonics_roster) = false;
+					}
 					}
 				}
 				else {
