@@ -8,23 +8,34 @@ function right_wrong (a,b){
 	return !on_off;
 };
 
+// var roster_match = right_wrong(guess, sonics_roster);
+
 var play_again = true;
 
 while (right_wrong(guess, sonics_roster)){
-		guess = prompt("Sorry he didn't play on the team. Is there another name that comes to mind?");
-}
+		guess = prompt("Sorry he didn't play on the team. Is there another name that comes to mind? If you want to stop playing, type \"STOP\"");
+		// if (roster_match == "STOP"){
+			// alert("OK, refresh the page if you want to play again.");
+			// roster_match = false;
+		// };
+};
 		while(play_again){
 			play_again = confirm ("Great going! " + guess + " did play on the team! Do you want to play again?");
 				if (play_again){
 				guess = prompt("Try and name another player on the team!");
 				right_wrong(guess, sonics_roster);
-					while (right_wrong (guess, sonics_roster)){
-					guess = prompt("Sorry he didn't play on that team. Is there another name that comes to mind?");
+					while (right_wrong(guess, sonics_roster)){
+					guess = prompt("Sorry he didn't play on that team. Is there another name that comes to mind? If you want to stop playing, type \"STOP\"");
+						// if (roster_match == "STOP"){
+						// alert("OK, refresh the page if you want to play again.");
+						// roster_match = false;
+						// }
 					}
-				}
+
 				else {
-					alert("Thanks for playing!")
-					play_again = false
-				}
+					alert("Thanks for playing!");
+					play_again = false;
+				};
+		};
 		}		
 </script>
