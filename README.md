@@ -6,4 +6,11 @@ that took Jordan and his 72-10 Bulls to 4-2 in the NBA Finals. The Reign Man and
 
 ## BRING EM BACK!!
 
-Enjoy the game - it took me around 3-4 hours to get it all right so that it repeats itself.
+## Instructions
+
+As soon as you open the file it will ask you for your name, then will ask you to guess
+a player from the 1996 team. If you get it right, you can play again. If you don't you can keep going if you wish.
+
+Sources include basketball-reference.com for all the players names, and Stephanie for showing me the way to get there!
+
+Enjoy the game.
