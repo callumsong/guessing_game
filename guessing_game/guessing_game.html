@@ -1,6 +1,8 @@
 <script>
 var name = prompt("I suppose I have to be polite - what's your name?");
-var guess = prompt("OK, " + name + ", we are going to try and bring the Sonics back\nCan you name a player from the 1996 Western Conference winning team?\nDon't forget to have the correct spelling!");
+
+var guess = prompt("OK, " + name + ", we are going to try and bring the Sonics back\n\nCan you name a player from the 1996 Western Conference winning team?\n\nDon't forget to have the correct spelling!");
+
 var sonics_roster = ["Vincent Askew", "Frank Brickowski", "Sherell Ford", "Hersey Hawkins", "Ervin Johnson", "Shawn Kemp", "Nate McMillan", "Gary Payton", "Sam Perkins", "Steve Scheffler", "Detlef Schrempf", "Eric Snow", "David Wingate"];
 
 function right_wrong (a,b){
@@ -8,34 +10,31 @@ function right_wrong (a,b){
 	return !on_off;
 };
 
-// var roster_match = right_wrong(guess, sonics_roster);
-
 var play_again = true;
 
 while (right_wrong(guess, sonics_roster)){
-		guess = prompt("Sorry he didn't play on the team. Is there another name that comes to mind? If you want to stop playing, type \"STOP\"");
-		// if (roster_match == "STOP"){
-			// alert("OK, refresh the page if you want to play again.");
-			// roster_match = false;
-		// };
-};
+		guess = prompt("Sorry, " + guess + " didn't play on the team. Is there another name that comes to mind?\n\nType \"STOP\" to stop playing");
+		if (guess == "STOP"){
+			alert("OK, thanks for playing.\n\nRefresh the page if you want to play again")
+			right_wrong(guess,sonics_roster) = false;
+		}
+}
 		while(play_again){
 			play_again = confirm ("Great going! " + guess + " did play on the team! Do you want to play again?");
 				if (play_again){
 				guess = prompt("Try and name another player on the team!");
 				right_wrong(guess, sonics_roster);
 					while (right_wrong(guess, sonics_roster)){
-					guess = prompt("Sorry he didn't play on that team. Is there another name that comes to mind? If you want to stop playing, type \"STOP\"");
-						// if (roster_match == "STOP"){
-						// alert("OK, refresh the page if you want to play again.");
-						// roster_match = false;
-						// }
+					guess = prompt("Sorry, " + guess + " didn't play on that team. Is there another name that comes to mind?\n\nType \"STOP\" to stop playing");
+					if (guess == "STOP"){
+						alert("OK, thanks for playing.\n\nRefresh the page if you want to play again");
+						right_wrong(guess,sonics_roster) = false;
 					}
-
+					}
+				}		
 				else {
-					alert("Thanks for playing!");
-					play_again = false;
-				};
-		};
+					alert("Thanks for playing!\n\nRefresh the page to play again!")
+					play_again = false
+				}
 		}		
 </script>
