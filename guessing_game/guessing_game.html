@@ -8,9 +8,11 @@ function right_wrong (a,b){
 	return !on_off;
 };
 
+var roster_check = right_wrong(guess, sonics_roster);
+
 var play_again = true;
 
-while (right_wrong(guess, sonics_roster)){
+while (roster_check == true){
 		guess = prompt("Sorry he didn't play on the team. Is there another name that comes to mind?");
 }
 		while(play_again){
@@ -18,7 +20,7 @@ while (right_wrong(guess, sonics_roster)){
 				if (play_again){
 				guess = prompt("Try and name another player on the team!");
 				right_wrong(guess, sonics_roster);
-					while (right_wrong (guess, sonics_roster)){
+					while (roster_check == true)){
 					guess = prompt("Sorry he didn't play on that team. Is there another name that comes to mind?");
 					}
 				}
