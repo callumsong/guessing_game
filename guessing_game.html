@@ -1,38 +1,46 @@
-	<script>
-	var name = prompt("I suppose I have to be polite - what's your name?");
-	var guess = prompt("OK, " + name + ", we are going to try and bring the Sonics back\n\nCan you name a player from the 1996 Western Conference winning team?\n\nDon't forget to have the full name, correct spelling and capital letters!");
-	var sonics_roster = ["Vincent Askew", "Frank Brickowski", "Sherell Ford", "Hersey Hawkins", "Ervin Johnson", "Shawn Kemp", "Nate McMillan", "Gary Payton", "Sam Perkins", "Steve Scheffler", "Detlef Schrempf", "Eric Snow", "David Wingate"];
-	var play_again = true;
-	var end_message = "Thanks for playing!\n\nRefresh the page to play again!"
-	var wrong_message = " didn't play on the team. Is there another name that comes to mind?\n\nDid you misspell the name, or didn't have capital letters?\n\nDon't forget to type the full name!\n\nType \"STOP\" to stop playing"
-	function roster_check(a, b){
-			var on_off = (b.indexOf(a) >= 0);
-			return !on_off;
-	};
+<script>
 
-	while (roster_check(guess, sonics_roster)){
-			guess = prompt("Sorry, " + guess + wrong_message);
-			if (guess == "STOP"){
-					alert(end_message)
-					roster_check(guess, sonics_roster) = false;
-			}
-	}
-	while(play_again){
-			play_again = confirm ("Great going! " + guess + " did play on the team! Do you want to play again?");
-			if (play_again){
-					guess = prompt("Try and name another player on the team!\n\nDon't forget correct spelling and capital letters!");
-					roster_check(guess, sonics_roster);
-					while (roster_check(guess, sonics_roster)){
-							guess = prompt("Sorry, " + name + wrong_message);
-							if (guess == "STOP"){
-									alert(end_message);
-									roster_check(guess, sonics_roster) = false;
-							}
-					}
-			}		
-			else {
+  var play_again = true;
+
+  var sonics_roster = ["Vincent Askew", "Frank Brickowski", "Sherell Ford", "Hersey Hawkins", "Ervin Johnson", "Shawn Kemp", "Nate McMillan", "Gary Payton", "Sam Perkins", "Steve Scheffler", "Detlef Schrempf", "Eric Snow", "David Wingate"];
+
+  var end_message = "Thanks for playing!\n\nRefresh the page to play again!"
+  
+  var wrong_message = " didn't play on the team. Is there another name that comes to mind?\n\nDid you misspell the name, or didn't have capital letters?\n\nDon't forget to type the full name!\n\nType \"STOP\" to stop playing"
+
+
+  function roster_check(a, b){
+    var on_off = (b.indexOf(a) >= 0);
+    return !on_off;
+  };
+
+  function game_continuation (){
+    while (roster_check(guess, sonics_roster)){
+      guess = prompt("Sorry, " + guess + wrong_message);
+      if (guess == "STOP"){
+        alert(end_message);
+        roster_check(guess, sonics_roster) = false;
+      }
+    }
+  }
+
+	var name = prompt("I suppose I have to be polite - what's your name?");
+	
+  var guess = prompt("OK, " + name + ", we are going to try and bring the Sonics back\n\nCan you name a player from the 1996 Western Conference winning team?\n\nDon't forget to have the full name, correct spelling and capital letters!");
+  
+  game_continuation();
+	
+  while(play_again){
+		play_again = confirm ("Great going! " + guess + " did play on the team! Do you want to play again?");
+		if (play_again){
+			guess = prompt("Try and name another player on the team!\n\nDon't forget correct spelling and capital letters!");
+			roster_check(guess, sonics_roster);
+			game_continuation();
+		}		
+		else {
 			alert(end_message)
 			play_again = false
-			}
+		}
 	}		
-	</script>
+
+</script>
